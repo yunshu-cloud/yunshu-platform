@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.yunshu</groupId>
+    <artifactId>yunshu-platform</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>ys-ability</module>
+        <module>ys-business</module>
+        <module>ys-commons</module>
+        <module>ys-config</module>
+        <module>ys-data</module>
+        <module>ys-config</module>
+    </modules>
+
+    <properties>
+        <springboot.version>2.3.0.RELEASE</springboot.version>
+        <springcloud-alibaba>2.2.6.RELEASE</springcloud-alibaba>
+        <springcloud-netflix.version>Hoxton.SR9</springcloud-netflix.version>
+        <basic-version>1.0-SNAPSHOT</basic-version>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencyManagement>
+       <dependencies>
+           <dependency>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot</artifactId>
+               <version>${springboot.version}</version>
+               <type>pom</type>
+               <scope>import</scope>
+           </dependency>
+
+           <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies -->
+           <dependency>
+               <groupId>org.springframework.cloud</groupId>
+               <artifactId>spring-cloud-dependencies</artifactId>
+               <version>${springcloud-netflix.version}</version>
+               <type>pom</type>
+               <scope>import</scope>
+           </dependency>
+           <dependency>
+               <groupId>com.alibaba.cloud</groupId>
+               <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+               <version>${springcloud-alibaba}</version>
+               <type>pom</type>
+               <scope>import</scope>
+           </dependency>
+
+           <!-- 自己架构的相关依赖-->
+           <dependency>
+               <groupId>com.yunshu</groupId>
+               <artifactId>ys-commons-web</artifactId>
+               <version>${basic-version}</version>
+           </dependency>
+           <dependency>
+               <groupId>com.yunshu</groupId>
+               <artifactId>ys-commons-core</artifactId>
+               <version>${basic-version}</version>
+           </dependency>
+
+           <dependency>
+               <groupId>com.yunshu</groupId>
+               <artifactId>ys-config</artifactId>
+               <version>${basic-version}</version>
+           </dependency>
+
+       </dependencies>
+
+
+   </dependencyManagement>
+
+    <build>
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <runtime-profile>dev</runtime-profile>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <runtime-profile>test</runtime-profile>
+            </properties>
+        </profile>
+    </profiles>
+
+
+</project>
