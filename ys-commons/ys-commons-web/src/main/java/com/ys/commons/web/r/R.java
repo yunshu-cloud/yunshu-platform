@@ -21,7 +21,6 @@ public class R<T> implements Serializable {
      * 响应信息
      */
     private String message;
-
     /**
      * 响应数据
      */

@@ -39,7 +39,9 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.yunshu</groupId>
+            <artifactId>ys-business-student-protocol</artifactId>
+        </dependency>
     </dependencies>
-
-
 </project>
