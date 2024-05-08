@@ -27,6 +27,8 @@
     <file url="file://$PROJECT_DIR$/ys-config/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ys-data/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ys-data/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-data/ys-data-base/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-data/ys-data-base/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ys-data/ys-data-entity/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ys-data/ys-data-entity/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ys-data/ys-data-entity/ys-data-entity-student/src/main/java" charset="UTF-8" />
