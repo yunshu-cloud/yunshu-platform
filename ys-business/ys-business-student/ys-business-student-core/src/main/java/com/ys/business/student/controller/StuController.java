@@ -1,10 +1,12 @@
 package com.ys.business.student.controller;
 
 import com.ys.business.student.input.StudentInput;
+import com.ys.business.student.service.StudentService;
 import com.ys.commons.web.r.R;
 import com.ys.commons.web.r.RUtils;
+import com.ys.data.entity.Student;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,23 +14,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 @RestController
 @RequestMapping("/stu")
 @Slf4j
 @Validated
 public class StuController {
-
-    @Value("${spring.datasource.url}")
-    private String datasource;
+    @Autowired
+    private StudentService studentService;
 
 
     @RequestMapping("/list")
     public R list(){
-        System.out.println(datasource);
-        log.info("log records");
-        System.out.println(1/0);
-        return RUtils.create("学生列表");
+        log.info("[stu-list] 学生列表:");
+        List<Student> stus = studentService.list();
+        return RUtils.create(stus);
     }
 
     @RequestMapping("/login")
