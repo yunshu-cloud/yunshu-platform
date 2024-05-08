@@ -6,6 +6,7 @@ import com.ys.commons.web.r.R;
 import com.ys.commons.web.r.RUtils;
 import com.ys.data.entity.Student;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -44,9 +45,14 @@ public class StuController {
      * @return
      */
     @RequestMapping("/insert")
-    public R insert(@Valid @RequestBody StudentInput student){
-        log.info("[stu-insert] 学生添加，{}",student);
+    public R insert(@Valid StudentInput stu){
+        log.info("[stu-insert] 学生添加，{}",stu);
+
+        Student student = new Student();
+        BeanUtils.copyProperties(stu, student);
+
         // 调用业务层
-        return  RUtils.create("添加成功");
+        boolean flag = studentService.save(student);
+        return  RUtils.create(flag);
     }
 }

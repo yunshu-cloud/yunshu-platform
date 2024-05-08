@@ -13,7 +13,7 @@ import java.util.Date;
  * 学生实体的入参对象
  */
 @Data
-@CustomValid(message = "生日与年龄不匹配", handler = AgeBirthdayValid.class)
+//@CustomValid(message = "生日与年龄不匹配", handler = AgeBirthdayValid.class)
 public class StudentInput implements Serializable {
     @NotBlank(message = "学生姓名不能为空")
     private String name;
