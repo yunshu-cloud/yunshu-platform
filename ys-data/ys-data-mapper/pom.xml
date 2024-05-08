@@ -10,6 +10,10 @@
     </parent>
 
     <artifactId>ys-data-mapper</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>ys-data-mapper-student</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

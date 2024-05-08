@@ -41,7 +41,6 @@ public class GlobalException {
         return RUtils.create(Codes.PARAMETER_ERROR, errors);
     }
 
-
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public R methodArgumentNotValidExceptionHandler(MethodArgumentNotValidException exception){
         Set<String> errors = exception.getBindingResult().getAllErrors()
@@ -49,8 +48,6 @@ public class GlobalException {
                 .collect(Collectors.toSet());
         return RUtils.create(Codes.PARAMETER_ERROR, errors);
     }
-
-
 
     /**
      * 统一异常处理方法
@@ -70,7 +67,6 @@ public class GlobalException {
         } catch (Exception e){
             log.error("[Global-Exception] - 捕获到全局异常信息！", t);
         }
-
         return RUtils.create(Codes.FAIL);
     }
 }

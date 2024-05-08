@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-ability/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-ability/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-business/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-business/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-business/ys-business-student/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-business/ys-business-student/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-business/ys-business-student/ys-business-student-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-business/ys-business-student/ys-business-student-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-business/ys-business-student/ys-business-student-feign/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-business/ys-business-student/ys-business-student-feign/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-business/ys-business-student/ys-business-student-protocol/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-business/ys-business-student/ys-business-student-protocol/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-commons/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-commons/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-commons/ys-commons-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-commons/ys-commons-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-commons/ys-commons-mysql/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-commons/ys-commons-mysql/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-commons/ys-commons-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-commons/ys-commons-web/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-config/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-config/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-data/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-data/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-data/ys-data-entity/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-data/ys-data-entity/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-data/ys-data-entity/ys-data-entity-student/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-data/ys-data-entity/ys-data-entity-student/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-data/ys-data-mapper/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-data/ys-data-mapper/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-data/ys-data-mapper/ys-data-mapper-student/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-data/ys-data-mapper/ys-data-mapper-student/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

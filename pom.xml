@@ -25,6 +25,8 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <mybatis-plus.version>3.4.0</mybatis-plus.version>
+        <druid.version>1.1.21</druid.version>
     </properties>
 
     <dependencyManagement>
@@ -75,7 +77,18 @@
                <artifactId>ys-business-student-protocol</artifactId>
                <version>${basic-version}</version>
            </dependency>
+           <dependency>
+               <groupId>com.baomidou</groupId>
+               <artifactId>mybatis-plus-boot-starter</artifactId>
+               <version>${mybatis-plus.version}</version>
+           </dependency>
 
+
+           <dependency>
+               <groupId>com.alibaba</groupId>
+               <artifactId>druid-spring-boot-starter</artifactId>
+               <version>${druid.version}</version>
+           </dependency>
        </dependencies>
 
 
