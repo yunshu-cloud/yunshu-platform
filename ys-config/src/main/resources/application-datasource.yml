@@ -1,3 +1,6 @@
 spring:
   datasource:
-    url: shujuku peizhi tongyi
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.92.120.:3306/ysphonedb
+    username:
+    password:
