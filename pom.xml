@@ -89,6 +89,23 @@
                <artifactId>druid-spring-boot-starter</artifactId>
                <version>${druid.version}</version>
            </dependency>
+
+           <dependency>
+               <groupId>org.example</groupId>
+               <artifactId>ys-commons-mysql</artifactId>
+               <version>${basic-version}</version>
+           </dependency>
+
+           <dependency>
+               <groupId>com.yunshu</groupId>
+               <artifactId>ys-data-entity-student</artifactId>
+               <version>${basic-version}</version>
+           </dependency>
+           <dependency>
+               <groupId>com.yunshu</groupId>
+               <artifactId>ys-data-mapper-student</artifactId>
+               <version>${basic-version}</version>
+           </dependency>
        </dependencies>
 
 
