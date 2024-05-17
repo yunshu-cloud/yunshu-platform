@@ -97,7 +97,7 @@ public class PagePlugin implements Interceptor {
      */
     private Integer getCount(Invocation invocation, String sql, StatementHandler statementHandler) throws SQLException {
         Connection connection = (Connection) invocation.getArgs()[0];
-        String countSql = "select count(*) as count " + MybatisUtil.getMasterFrom(0,sql);
+        String countSql = "select count(*) as count " + sql.substring(MybatisUtil.getMasterFrom(0,sql));
         log.info("[page - plugin] 生成记录总条数的sql语句 - {}",countSql);
 
         PreparedStatement ps = connection.prepareStatement(countSql);
