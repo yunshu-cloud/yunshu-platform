@@ -1,3 +1,5 @@
 spring:
-  datasource:
-    url: development
+  profiles:
+    include:
+      - datasource
+      - jackson

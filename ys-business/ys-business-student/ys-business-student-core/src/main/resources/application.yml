@@ -4,7 +4,7 @@ spring:
   application:
     name: ys-student
   profiles:
-#    active: dev
+#    active: test
     active: '@runtime-profile@'
 
 
