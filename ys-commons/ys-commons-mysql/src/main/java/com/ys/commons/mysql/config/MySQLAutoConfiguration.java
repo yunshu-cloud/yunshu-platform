@@ -4,6 +4,7 @@ package com.ys.commons.mysql.config;
 import com.ys.commons.mysql.plugin.PagePlugin;
 import com.ys.commons.mysql.plugin.SQLPlugin;
 import com.ys.commons.mysql.property.PluginConfigInfo;
+import com.ys.commons.mysql.webinterceptor.PageInterceptor;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -29,5 +30,12 @@ public class MySQLAutoConfiguration {
     @ConditionalOnProperty(name = "yunshu.plugin.page.enable", havingValue = "true",matchIfMissing = true)
     public PagePlugin getPagePlugin(){
         return new PagePlugin();
+    }
+
+
+    // 注册分页拦截期
+    @Bean
+    public PageInterceptor getPageInterceptor(){
+        return new PageInterceptor();
     }
 }

@@ -153,12 +153,12 @@
                 <runtime-profile>dev</runtime-profile>
             </properties>
         </profile>
-        <profile>
-            <id>test</id>
-            <properties>
-                <runtime-profile>test</runtime-profile>
-            </properties>
-        </profile>
+<!--        <profile>-->
+<!--            <id>test</id>-->
+<!--            <properties>-->
+<!--                <runtime-profile>test</runtime-profile>-->
+<!--            </properties>-->
+<!--        </profile>-->
     </profiles>
 
 

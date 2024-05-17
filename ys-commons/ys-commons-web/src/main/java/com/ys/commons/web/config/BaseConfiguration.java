@@ -20,9 +20,22 @@ public class BaseConfiguration {
         return new GlobalException();
     }
 
+    /**
+     * 装配Application工具类
+     * @return
+     */
     @Bean
     public ApplicationUtils getApplicationUtils(){
         return new ApplicationUtils();
+    }
+
+    /**
+     * 注册web拦截器配置类
+     * @return
+     */
+    @Bean
+    public WebInterceptorConfig getWebInteceptorConfig(){
+        return new WebInterceptorConfig();
     }
 
 }
