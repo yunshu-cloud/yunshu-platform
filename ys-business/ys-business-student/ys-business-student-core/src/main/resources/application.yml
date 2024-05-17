@@ -6,3 +6,7 @@ spring:
   profiles:
 #    active: dev
     active: '@runtime-profile@'
+yunshu:
+  plugin:
+    sql:
+      enable: true

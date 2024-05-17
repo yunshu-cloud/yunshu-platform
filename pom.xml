@@ -15,6 +15,7 @@
         <module>ys-config</module>
         <module>ys-data</module>
         <module>ys-config</module>
+        <module>test</module>
     </modules>
 
     <properties>
