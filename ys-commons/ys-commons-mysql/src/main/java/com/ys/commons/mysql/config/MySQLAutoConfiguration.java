@@ -1,6 +1,7 @@
 package com.ys.commons.mysql.config;
 
 
+import com.ys.commons.mysql.plugin.PagePlugin;
 import com.ys.commons.mysql.plugin.SQLPlugin;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -17,5 +18,12 @@ public class MySQLAutoConfiguration {
     @ConditionalOnProperty(name = "yunshu.plugin.sql.enable", havingValue = "true",matchIfMissing = false)
     public SQLPlugin getSQLPlugin(){
         return new SQLPlugin();
+    }
+
+
+    // 注册分页插件
+    @Bean
+    public PagePlugin getPagePlugin(){
+        return new PagePlugin();
     }
 }

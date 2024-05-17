@@ -46,5 +46,6 @@ public class SQLPlugin implements Interceptor {
         log.info("[SQL - EXEC] SQL的耗时：{}s", BigDecimal.valueOf(end).subtract(BigDecimal.valueOf(begin))
                 .divide(BigDecimal.valueOf(1000)).setScale(6, RoundingMode.DOWN));
         return result;
+
     }
 }

@@ -2,6 +2,7 @@ package com.ys.business.student.controller;
 
 import com.ys.business.student.input.StudentInput;
 import com.ys.business.student.service.StudentService;
+import com.ys.commons.mysql.page.YunshuPage;
 import com.ys.commons.web.r.R;
 import com.ys.commons.web.r.RUtils;
 import com.ys.data.entity.Student;
@@ -9,7 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,6 +29,10 @@ public class StuController {
     @RequestMapping("/list")
     public R list(){
         log.info("[stu-list] 学生列表:");
+
+        // 手动设置分页对象
+        YunshuPage.setPage(1,1);
+
         List<Student> stus = studentService.list();
         return RUtils.create(stus);
     }
