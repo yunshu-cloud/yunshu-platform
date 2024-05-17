@@ -1,5 +1,6 @@
 package com.ys.commons.mysql.plugin;
 
+import com.ys.commons.mysql.util.MybatisUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.executor.statement.StatementHandler;
 import org.apache.ibatis.plugin.Interceptor;
@@ -34,7 +35,7 @@ public class SQLPlugin implements Interceptor {
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
         // 记录当前执行的sql语句 & 记录sql语句执行的耗时
-        StatementHandler statementHandler = (StatementHandler)invocation.getTarget();
+        StatementHandler statementHandler = (StatementHandler) MybatisUtil.getNoProxyObject(invocation.getTarget());
         String sql = statementHandler.getBoundSql().getSql(); // 获取sql语句
 
         log.info("[SQL - EXEC]: 执行SQL语句：{}",sql);
@@ -46,6 +47,5 @@ public class SQLPlugin implements Interceptor {
         log.info("[SQL - EXEC] SQL的耗时：{}s", BigDecimal.valueOf(end).subtract(BigDecimal.valueOf(begin))
                 .divide(BigDecimal.valueOf(1000)).setScale(6, RoundingMode.DOWN));
         return result;
-
     }
 }

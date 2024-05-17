@@ -2,6 +2,7 @@ package com.ys.commons.mysql.plugin;
 
 import com.ys.commons.mysql.page.Page;
 import com.ys.commons.mysql.page.YunshuPage;
+import com.ys.commons.mysql.util.MybatisUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.executor.statement.StatementHandler;
 import org.apache.ibatis.plugin.Interceptor;
@@ -38,7 +39,7 @@ public class PagePlugin implements Interceptor {
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
         // 获取statementHandler
-        StatementHandler statementHandler = (StatementHandler)invocation.getTarget();
+        StatementHandler statementHandler = (StatementHandler) MybatisUtil.getNoProxyObject(invocation.getTarget());
 
         //获取拦截的sql语句
         String sql = statementHandler.getBoundSql().getSql().toLowerCase().replaceAll("\n", "");
