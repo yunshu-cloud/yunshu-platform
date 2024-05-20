@@ -25,14 +25,21 @@ public class StuController {
     @Autowired
     private StudentService studentService;
 
-
     @RequestMapping("/list")
-    public R list(){
+    public R list1(){
         log.info("[stu-list] 学生列表:");
-
         // 手动设置分页对象
         YunshuPage.setPage(1,1);
+        List<Student> stus = studentService.list();
+        return RUtils.create(stus);
+    }
 
+
+    @RequestMapping("/list")
+    public R list2(){
+        log.info("[stu-list] 学生列表:");
+        // 手动设置分页对象
+        YunshuPage.setPage(1,1);
         List<Student> stus = studentService.list();
         return RUtils.create(stus);
     }
