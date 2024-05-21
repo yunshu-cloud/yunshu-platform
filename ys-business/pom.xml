@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>ys-business-student</module>
+        <module>ys-business-classes</module>
     </modules>
 
     <properties>
