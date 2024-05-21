@@ -2,7 +2,7 @@ package com.ys.business.student.controller;
 
 import com.ys.business.student.input.StudentInput;
 import com.ys.business.student.service.StudentService;
-import com.ys.commons.mysql.page.YunshuPage;
+import com.ys.commons.web.apiversion.ApiVersion;
 import com.ys.commons.web.r.R;
 import com.ys.commons.web.r.RUtils;
 import com.ys.data.entity.Student;
@@ -21,27 +21,28 @@ import java.util.List;
 @RequestMapping("/stu")
 @Slf4j
 @Validated
+@ApiVersion(2.0)
 public class StuController {
     @Autowired
     private StudentService studentService;
 
-    @RequestMapping("/list")
-    public R list1(){
-        log.info("[stu-list] 学生列表:");
-        // 手动设置分页对象
-        YunshuPage.setPage(1,1);
-        List<Student> stus = studentService.list();
-        return RUtils.create(stus);
-    }
+//    @RequestMapping("/list")
+//    @ApiVersion(1.0)
+//    public R list(){
+//        log.info("[stu-list] 学生列表:");
+//        // 手动设置分页对象
+//        List<Student> stus = studentService.list();
+//        return RUtils.create("stu - list - 1.0");
+//    }
 
 
+    @ApiVersion(2.0)
     @RequestMapping("/list")
     public R list2(){
         log.info("[stu-list] 学生列表:");
         // 手动设置分页对象
-        YunshuPage.setPage(1,1);
         List<Student> stus = studentService.list();
-        return RUtils.create(stus);
+        return RUtils.create("stus - list - 2.0");
     }
 
     @RequestMapping("/login")

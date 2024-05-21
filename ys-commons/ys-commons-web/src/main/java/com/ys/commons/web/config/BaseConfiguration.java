@@ -38,4 +38,14 @@ public class BaseConfiguration {
         return new WebInterceptorConfig();
     }
 
+//    /**
+//     * 注册自定义handlermapping 实现接口多版本的控制
+//     * @return
+//     */
+//    @Bean
+//    public WebMvcRegistrations getWebMvcRegister(){
+//        return new ApiVersionMappingRegister();
+//    }
+
+
 }

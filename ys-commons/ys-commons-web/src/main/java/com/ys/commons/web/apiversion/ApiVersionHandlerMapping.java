@@ -1,5 +1,6 @@
 package com.ys.commons.web.apiversion;
 
+import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.web.servlet.mvc.condition.RequestCondition;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
@@ -19,7 +20,10 @@ public class ApiVersionHandlerMapping extends RequestMappingHandlerMapping {
      */
     @Override
     protected RequestCondition<?> getCustomTypeCondition(Class<?> handlerType) {
-        return super.getCustomTypeCondition(handlerType);
+        // 获取类上的版本注解
+        ApiVersion apiVersion = AnnotationUtils.getAnnotation(handlerType, ApiVersion.class);
+
+        return new ApiVersionRequestCondition(apiVersion != null ? apiVersion.value() : 1.0);
     }
 
 
@@ -31,6 +35,14 @@ public class ApiVersionHandlerMapping extends RequestMappingHandlerMapping {
      */
     @Override
     protected RequestCondition<?> getCustomMethodCondition(Method method) {
-        return super.getCustomMethodCondition(method);
+        ApiVersion apiVersion = AnnotationUtils.getAnnotation(method, ApiVersion.class);
+
+        // 如果方法的版本注解为空， 尝试获取类上面的注解
+        if (apiVersion == null){
+            // 获取该方法类上面的注解
+            apiVersion = AnnotationUtils.getAnnotation(method.getDeclaringClass(), ApiVersion.class);
+        }
+
+        return new ApiVersionRequestCondition(apiVersion != null ? apiVersion.value() : 1.0);
     }
 }

@@ -1,5 +1,6 @@
 package com.ys.commons.web.apiversion;
 
+import lombok.Getter;
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.mvc.condition.RequestCondition;
 
@@ -8,14 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 多版本接口的请求条件对象
  */
+@Getter
 public class ApiVersionRequestCondition implements RequestCondition<ApiVersionRequestCondition> {
 
     // 表示当前版本号
     private double apiVersion = 1.0;
-
-    public double getApiVersion() {
-        return apiVersion;
-    }
 
 
     // 通过构造方法设置
@@ -27,7 +25,10 @@ public class ApiVersionRequestCondition implements RequestCondition<ApiVersionRe
 
     @Override
     public ApiVersionRequestCondition combine(ApiVersionRequestCondition other) {
-        return null;
+        // this代表Controller的请求条件
+        // other 代表Controller中某个方法的请求条件
+
+        return other;
     }
 
     /**
@@ -47,10 +48,16 @@ public class ApiVersionRequestCondition implements RequestCondition<ApiVersionRe
             reqVersion = request.getParameter(VERSION_NAME);
         }
 
-        if(StringUtils.isEmpty(reqVersion)){
-            reqVersionDouble = Double.parseDouble(reqVersion);
+        // 不为空 将string转换为double
+        if(!StringUtils.isEmpty(reqVersion)){
+            try {
+                reqVersionDouble = Double.parseDouble(reqVersion);
+            } catch (Throwable t){
+                reqVersionDouble = 1.0;
+            }
         }
 
+        // 想上兼容
         if (this.getApiVersion() <= reqVersionDouble){
             // 当前方法或者是类 已经匹配了当前的请求 返回条件本身
             return this;
@@ -67,6 +74,7 @@ public class ApiVersionRequestCondition implements RequestCondition<ApiVersionRe
      */
     @Override
     public int compareTo(ApiVersionRequestCondition other, HttpServletRequest request) {
-        return 0;
+        // 降序排列 让版本号更大的接口排在前面
+        return Double.compare(other.getApiVersion(), this.getApiVersion());
     }
 }
