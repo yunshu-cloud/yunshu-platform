@@ -1,0 +1,16 @@
+server:
+  port: 8100
+spring:
+  application:
+    # 微服务名称
+    name: ys-student
+  profiles:
+    #    active: test
+    active: '@runtime-profile@'
+  cloud:
+    nacos:
+      # 配置中心 & 注册中心 nacos地址
+      server-addr: 47.92.120.39:8848
+      config:
+        file-extension: yaml
+

@@ -21,6 +21,8 @@
         <springboot.version>2.3.0.RELEASE</springboot.version>
         <springcloud-alibaba>2.2.6.RELEASE</springcloud-alibaba>
         <springcloud-netflix.version>Hoxton.SR9</springcloud-netflix.version>
+
+
         <basic-version>1.0-SNAPSHOT</basic-version>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>

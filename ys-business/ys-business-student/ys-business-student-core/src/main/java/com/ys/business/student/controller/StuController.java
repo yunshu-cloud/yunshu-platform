@@ -9,6 +9,8 @@ import com.ys.data.entity.Student;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,9 +24,13 @@ import java.util.List;
 @Slf4j
 @Validated
 @ApiVersion(2.0)
+@RefreshScope
 public class StuController {
     @Autowired
     private StudentService studentService;
+
+    @Value("${ys.name}")
+    private String name;
 
 //    @RequestMapping("/list")
 //    @ApiVersion(1.0)
@@ -39,7 +45,7 @@ public class StuController {
     @ApiVersion(2.0)
     @RequestMapping("/list")
     public R list2(){
-        log.info("[stu-list] 学生列表:");
+        log.info("[stu-list] 学生列表 - 读取远程的配置信息 ：" + name);
         // 手动设置分页对象
         List<Student> stus = studentService.list();
         return RUtils.create("stus - list - 2.0");
