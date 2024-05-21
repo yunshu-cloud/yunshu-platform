@@ -34,11 +34,14 @@ public class LockMDCListener implements GenericApplicationListener {
      */
     @Override
     public void onApplicationEvent(ApplicationEvent applicationEvent) {
+        System.out.println("---------> 日志环境监听事件触发！");
         ApplicationEnvironmentPreparedEvent environmentPreparedEvent = (ApplicationEnvironmentPreparedEvent) applicationEvent;
 
         ConfigurableEnvironment environment = environmentPreparedEvent.getEnvironment();
 
         MutablePropertySources propertySources = environment.getPropertySources();
+
+        propertySources.forEach(line -> System.out.println("相关配置源----->"+ line.getName()));
 
         PropertySource<?> propertySource = propertySources.get(APPLICATION_CONFIG_PROPERTIES);
         String appName = (String) propertySource.getProperty(APP_NAME);

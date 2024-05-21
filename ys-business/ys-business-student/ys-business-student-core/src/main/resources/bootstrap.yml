@@ -10,10 +10,12 @@ spring:
   cloud:
     nacos:
       # 配置中心 & 注册中心 nacos地址
-      server-addr: 47.92.120.39:8848
+      server-addr: '@config-address@'
       config:
         file-extension: yaml
         shared-configs:
           - data-id: myserver.yaml
             refresh: true
 
+logging:
+  config: classpath:log4j2.xml

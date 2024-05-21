@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        heart-beat-interval: 1000
+        heart-beat-timeout: 3000
+        ip-delete-timeout: 3000

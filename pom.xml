@@ -152,12 +152,14 @@
             <id>dev</id>
             <properties>
                 <runtime-profile>dev</runtime-profile>
+                <config-address>47.92.120.39:8848</config-address>
             </properties>
         </profile>
         <profile>
             <id>test</id>
             <properties>
                 <runtime-profile>test</runtime-profile>
+                <config-address>47.92.120.39:8848</config-address>
             </properties>
         </profile>
     </profiles>
