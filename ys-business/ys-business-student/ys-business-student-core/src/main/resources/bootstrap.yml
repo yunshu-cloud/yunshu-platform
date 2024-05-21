@@ -16,6 +16,5 @@ spring:
         shared-configs:
           - data-id: myserver.yaml
             refresh: true
-
 logging:
   config: classpath:log4j2.xml
