@@ -32,6 +32,9 @@ public class StuController {
     @Value("${ys.name}")
     private String name;
 
+    @Value("${multi.file}")
+    private String multiFileConfig;
+
 //    @RequestMapping("/list")
 //    @ApiVersion(1.0)
 //    public R list(){
@@ -46,6 +49,7 @@ public class StuController {
     @RequestMapping("/list")
     public R list2(){
         log.info("[stu-list] 学生列表 - 读取远程的配置信息 ：" + name);
+        log.info("muti-file :" + multiFileConfig);
         // 手动设置分页对象
         List<Student> stus = studentService.list();
         return RUtils.create("stus - list - 2.0");

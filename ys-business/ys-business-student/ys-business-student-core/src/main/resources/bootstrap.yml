@@ -13,4 +13,7 @@ spring:
       server-addr: 47.92.120.39:8848
       config:
         file-extension: yaml
+        shared-configs:
+          - data-id: myserver.yaml
+            refresh: true
 
