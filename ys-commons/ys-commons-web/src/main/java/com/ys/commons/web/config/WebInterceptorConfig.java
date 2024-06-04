@@ -13,7 +13,7 @@ import java.util.List;
  */
 
 public class WebInterceptorConfig implements WebMvcConfigurer {
-    @Autowired
+    @Autowired(required = false)
     List<HandlerInterceptorAdapter> interceptorAdapters;
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
