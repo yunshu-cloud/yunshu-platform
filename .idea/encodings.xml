@@ -47,6 +47,8 @@
     <file url="file://$PROJECT_DIR$/ys-data/ys-data-entity/ys-data-entity-student/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ys-data/ys-data-mapper/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ys-data/ys-data-mapper/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-data/ys-data-mapper/ys-data-mapper-classes/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ys-data/ys-data-mapper/ys-data-mapper-classes/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ys-data/ys-data-mapper/ys-data-mapper-student/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ys-data/ys-data-mapper/ys-data-mapper-student/src/main/resources" charset="UTF-8" />
   </component>

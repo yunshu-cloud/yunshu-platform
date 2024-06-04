@@ -119,6 +119,18 @@
                <artifactId>ys-data-base</artifactId>
                <version>${basic-version}</version>
            </dependency>
+
+           <dependency>
+               <groupId>com.yunshu</groupId>
+               <artifactId>ys-data-entity-class</artifactId>
+               <version>${basic-version}</version>
+           </dependency>
+
+           <dependency>
+               <groupId>com.yunshu</groupId>
+               <artifactId>ys-data-mapper-classes</artifactId>
+               <version>${basic-version}</version>
+           </dependency>
        </dependencies>
 
 

@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>ys-data-mapper-student</module>
+        <module>ys-data-mapper-classes</module>
     </modules>
 
     <properties>

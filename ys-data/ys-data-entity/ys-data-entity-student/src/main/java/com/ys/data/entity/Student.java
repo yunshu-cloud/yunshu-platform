@@ -13,6 +13,7 @@ import java.util.Date;
 public class Student extends BaseEntity {
     @TableId(type = IdType.AUTO)
     private Long id;
+    private Long cid;
     private String name;
     private Integer age;
     private String email;
